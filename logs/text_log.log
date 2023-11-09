@@ -1,0 +1,9 @@
+13:42:32.379 [main] INFO  by.melnikov.customarray.main.Main - application is running
+13:42:32.383 [main] INFO  by.melnikov.customarray.main.Main - reading arrays from arrays.txt
+13:42:32.390 [main] INFO  by.melnikov.customarray.main.Main - creating custom arrays
+13:42:32.393 [main] INFO  by.melnikov.customarray.main.Main - saving custom arrays to repository
+13:42:32.396 [main] INFO  by.melnikov.customarray.printer.DataPrinter - all results are stored in output.txt
+13:42:32.405 [main] INFO  by.melnikov.customarray.main.Main - do some operations with specifications and comparators
+13:42:32.406 [main] INFO  by.melnikov.customarray.entity.CustomArray - elements of array was changed. notifying observers
+13:42:32.410 [main] INFO  by.melnikov.customarray.entity.Warehouse - parameters of array with id: 1 were recalculated
+13:42:32.414 [main] INFO  by.melnikov.customarray.main.Main - application is complete

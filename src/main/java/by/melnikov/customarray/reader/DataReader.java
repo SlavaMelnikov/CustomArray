@@ -26,16 +26,19 @@ public class DataReader {
     }
 
     public List<String> read(String source) throws CustomException {
-        List<String> lines = new ArrayList<>();
+        List<String> lines;
         DataValidator validator = DataValidator.getInstance();
-        Path path = Path.of(source);
-        if (validator.fileExists(path)) {
-            try {
-                lines = Files.readAllLines(path);
-            } catch (IOException e) {
-                logger.error("reading arrays from file error");
-                throw new CustomException("reading error" + e);
-            }
+
+        if (!validator.fileExists(source)) {
+            logger.error("file in " + source + " doesn't exists");
+            throw new CustomException("file in " + source + " doesn't exists");
+        }
+
+        try {
+            lines = Files.readAllLines(Path.of(source));
+        } catch (IOException e) {
+            logger.error("reading arrays from file error");
+            throw new CustomException("reading error", e);
         }
         return lines;
     }

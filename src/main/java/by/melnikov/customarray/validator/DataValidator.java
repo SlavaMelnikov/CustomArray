@@ -34,30 +34,21 @@ public class DataValidator {
         }
         return instance;
     }
-    public boolean fileExists(Path path) throws CustomException {
-        if (Files.exists(path)) {
-            return true;
-        } else {
-            logger.error("file not found in " + path);
-            throw new CustomException("file not found in " + path);
-        }
+    public boolean fileExists(String path) throws CustomException {
+        return Files.exists(Path.of(path));
     }
 
-    public boolean isValid(String line) {
-        return !isEmpty(line) && !hasInvalidSymbols(line) && hasNumbersOnlyInRange(line);
+    public boolean isArrayInFileValid(String arrayInFile) {
+        return (!arrayInFile.isBlank() && !hasInvalidSymbols(arrayInFile) && hasNumbersOnlyInRange(arrayInFile));
     }
 
-    public boolean isEmpty(String line) {
-        return line.isEmpty() || line.isBlank();
+    public boolean hasInvalidSymbols(String arrayInFile) {
+        return arrayInFile.length() != arrayInFile.replaceAll(INVALID_SYMBOLS_REGEX, "").length();
     }
 
-    public boolean hasInvalidSymbols(String line) {
-        return line.length() != line.replaceAll(INVALID_SYMBOLS_REGEX, "").length();
-    }
-
-    public boolean hasNumbersOnlyInRange(String line) {
+    public boolean hasNumbersOnlyInRange(String arrayInFile) {
         Pattern pattern = Pattern.compile(BIG_NUMBER_TEMPLATE_REGEX);
-        Matcher matcher = pattern.matcher(line);
+        Matcher matcher = pattern.matcher(arrayInFile);
         while (matcher.find()) {
             try {
                 Integer.parseInt(matcher.group());

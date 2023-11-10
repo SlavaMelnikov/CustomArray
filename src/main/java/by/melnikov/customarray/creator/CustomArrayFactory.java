@@ -11,12 +11,12 @@ public class CustomArrayFactory {
         return new CustomArray(array);
     }
 
-    public static List<CustomArray> create(List<int[]> arrays) throws CustomException {
-        if (arrays == null) {
+    public static List<CustomArray> create(List<int[]> listOfArrays) throws CustomException {
+        if (listOfArrays == null) {
             throw new CustomException("list of arrays is null");
         }
         List<CustomArray> result = new ArrayList<>();
-        for (int[] array : arrays) {
+        for (int[] array : listOfArrays) {
             result.add(create(array));
         }
         return result;

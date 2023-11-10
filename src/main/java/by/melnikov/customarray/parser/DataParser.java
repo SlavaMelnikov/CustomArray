@@ -26,7 +26,7 @@ public class DataParser {
         List<int[]> result = new ArrayList<>();
         DataValidator validator = DataValidator.getInstance();
         for (String line : lines) {
-            if (validator.isValid(line)) {
+            if (validator.isArrayInFileValid(line)) {
                 result.add(parseLine(line));
             }
         }

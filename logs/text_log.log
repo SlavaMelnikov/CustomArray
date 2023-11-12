@@ -1,5 +1,0 @@
-19:55:40.932 [main] INFO  by.melnikov.customarray.printer.DataPrinter - all results are stored in output.txt
-19:55:40.950 [main] INFO  by.melnikov.customarray.main.Main - do some operations with specifications and comparators
-19:55:40.950 [main] INFO  by.melnikov.customarray.entity.CustomArray - elements of array was changed. notifying observers
-19:55:40.975 [main] INFO  by.melnikov.customarray.entity.Warehouse - parameters of array with id: 1 were recalculated
-19:55:40.975 [main] INFO  by.melnikov.customarray.main.Main - application is complete

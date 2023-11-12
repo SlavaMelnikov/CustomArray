@@ -13,7 +13,7 @@ import java.util.StringJoiner;
 public class CustomArray {
     public static final Logger logger = LogManager.getLogger();
     private CustomArrayObserver observer;
-    private long arrayId;
+    private final long arrayId;
     private int[] array;
 
 
@@ -40,7 +40,7 @@ public class CustomArray {
     }
 
     public void setArray(int[] array) throws CustomException {
-        if (array == null && array.length == 0) {
+        if (array == null || array.length == 0) {
             logger.error("array is null or don't have length");
             throw new CustomException("array must be not null and have some length");
         }
@@ -49,7 +49,7 @@ public class CustomArray {
     }
 
     public void changeElement(int index, int newElement) throws CustomException {
-        if (index <= 0 || index > array.length) {
+        if (index < 0 || index > array.length) {
             logger.error("index is out of array bounds");
             throw new CustomException("index is out of array bounds");
         }

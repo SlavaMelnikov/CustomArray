@@ -1,20 +1,20 @@
-package by.melnikov.customarray.service.impl;
+package by.melnikov.customarray.service;
 
 import by.melnikov.customarray.entity.CustomArray;
 import by.melnikov.customarray.exception.CustomException;
-import by.melnikov.customarray.service.ArrayService;
+import by.melnikov.customarray.service.impl.ArrayServiceImpl;
 import org.junit.jupiter.api.Test;
 
 import static by.melnikov.customarray.service.ArrayService.Condition.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class ArrayServiceImplTest {
+class ArrayServiceTest {
 
     ArrayService service = ArrayServiceImpl.getInstance();
 
     @Test
     void arrayWithDifferentValues() {
-        int[] array = new int[]{1, 12, -3, 8, 0, -5, 4, 7};
+        int[] array = {1, 12, -3, 8, 0, -5, 4, 7};
         CustomArray customArray = new CustomArray(array);
         assertAll(
                 () -> assertEquals(12,  service.max(customArray)),
@@ -29,7 +29,7 @@ class ArrayServiceImplTest {
 
     @Test
     void arrayWithOnlyPositiveValues() {
-        int[] array = new int[]{1, 12, 3, 8, 1, 5, 4, 6};
+        int[] array = {1, 12, 3, 8, 1, 5, 4, 6};
         CustomArray customArray = new CustomArray(array);
         assertAll(
                 () -> assertEquals(12,  service.max(customArray)),
@@ -44,7 +44,7 @@ class ArrayServiceImplTest {
 
     @Test
     void arrayWithOnlyNegativeValues() {
-        int[] array = new int[]{-1, -12, -3, -8, -2, -5, -4, -5};
+        int[] array = {-1, -12, -3, -8, -2, -5, -4, -5};
         CustomArray customArray = new CustomArray(array);
         assertAll(
                 () -> assertEquals(-1, service.max(customArray)),
@@ -59,7 +59,7 @@ class ArrayServiceImplTest {
 
     @Test
     void arrayWithEqualValues() {
-        int[] array = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
+        int[] array ={0, 0, 0, 0, 0, 0, 0, 0};
         CustomArray customArray = new CustomArray(array);
         assertAll(
                 () -> assertEquals(0, service.max(customArray)),
@@ -74,7 +74,7 @@ class ArrayServiceImplTest {
 
     @Test
     void conditionIsNullTest() {
-        int[] array = new int[]{1, 12, -3, 8, 0, -5, 4, 7};
+        int[] array = {1, 12, -3, 8, 0, -5, 4, 7};
         CustomArray customArray = new CustomArray(array);
         assertThrows(CustomException.class,
                 () -> service.replaceByCondition(customArray, null , 0, 0));

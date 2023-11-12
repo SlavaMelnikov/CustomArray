@@ -1,0 +1,11 @@
+19:54:46.782 [main] INFO  by.melnikov.customarray.main.Main - application is running
+19:54:46.792 [main] INFO  by.melnikov.customarray.main.Main - reading arrays from arrays.txt
+19:54:46.798 [main] INFO  by.melnikov.customarray.main.Main - creating custom arrays
+19:54:46.802 [main] INFO  by.melnikov.customarray.main.Main - saving custom arrays to repository
+19:54:46.804 [main] INFO  by.melnikov.customarray.printer.DataPrinter - all results are stored in output.txt
+19:54:46.814 [main] INFO  by.melnikov.customarray.main.Main - do some operations with specifications and comparators
+19:54:46.814 [main] ERROR by.melnikov.customarray.entity.CustomArray - index is out of array bounds
+19:55:40.894 [main] INFO  by.melnikov.customarray.main.Main - application is running
+19:55:40.903 [main] INFO  by.melnikov.customarray.main.Main - reading arrays from arrays.txt
+19:55:40.912 [main] INFO  by.melnikov.customarray.main.Main - creating custom arrays
+19:55:40.928 [main] INFO  by.melnikov.customarray.main.Main - saving custom arrays to repository

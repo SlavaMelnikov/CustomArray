@@ -5,7 +5,7 @@ import by.melnikov.customarray.service.SortArrayService;
 
 public class QuickSortImpl implements SortArrayService {
     @Override
-    public int[] sort(CustomArray array) { //FIXME
+    public int[] sort(CustomArray array) {
         return new int[0];
     }
 }

@@ -17,7 +17,7 @@ public class CustomArray {
     private int[] array;
 
 
-    public CustomArray(int[] array) throws CustomException {
+    public CustomArray(int[] array) {
         this.array = array;
         arrayId = IdGenerator.generateId();
         observer = new CustomArrayObserverImpl();

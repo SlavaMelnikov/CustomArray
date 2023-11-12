@@ -51,6 +51,9 @@ public class ArrayServiceImpl implements ArrayService {
 
     @Override
     public int[] replaceByCondition(CustomArray array, Condition condition, int of, int to) throws CustomException {
+        if (condition == null) {
+            throw new CustomException("condition is null");
+        }
         IntPredicate predicate;
         switch (condition) {
             case MORE -> predicate = n -> n > of;
